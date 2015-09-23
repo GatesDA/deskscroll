@@ -8,6 +8,7 @@ WheelUp::  Send ^#{Left}
 WheelDown::Send ^#{Right}
 
 TaskViewHover() {
-    MouseGetPos,,,, HoverControl
-    return HoverControl = "TrayButton1"
+    MouseGetPos,,, id, NN
+    ControlGetText, Text, %NN%, ahk_id %id%
+    return Text = "Task View"
 }
